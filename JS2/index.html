@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>1) Difference between var, let and const. </h3>
+    <p><strong>Ans:</strong>     
+    <ol>
+        <li>var is global or functional scope. It can be reassigned. It can be redeclared.</li>
+        <li>let is block scoped. It can be reassigned. It cannot be redeclared.</li>
+        <li>const is vlock scoped. It cannot be reassigned. It cannot be redeclared. Have to assign value with declaration itself.</li>
+    </ol>
+
+    <pre>  
+        console.log("---var---");
+        var a=5;
+        var a=10;
+        console.log(a);      //5   //10
+
+        console.log("---let---");
+        let a=10;
+        let a=20;      //we cannot redeclare.
+        console.log(a);   //10    //error
+
+        console.log("---const---");
+        const a=10;
+        a=20;
+        console.log(a);  //throws error that assigned to fixed value (cannot be modified).
+    </pre>
+
+
+    <h3>2) What is Hoisting?</h3>
+    <p><strong>Ans:</strong> It is deafult Javascript Mechanism when our variables and functions declarations are moved to top of their scope before the code execution.</p>
+    <pre>
+        console.log("---Hoisting---");
+        a=10;
+        console.log(a);   //10
+        var a;   // var a appears to move to the top of its scope.
+    </pre>
+
+
+    <h3>3) What is Temperal Dead Zone?</h3>
+    <p><strong>Ans:</strong> The time between the variables hoisted and the variables get initialized is called the Temperal Dead Zone.</p>
+
+    <pre>
+        console.log("---Temperal Dead Zone---");
+        console.log(a);   //undefined
+        console.log(b);   //Cannot access 'b' before initialization
+        var a=10;
+        let b=20;
+    </pre>
+
+</body>
+</html>
